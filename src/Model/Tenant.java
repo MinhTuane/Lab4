@@ -40,4 +40,26 @@ public class Tenant extends User implements TenantService {
         throw new UnsupportedOperationException("Unimplemented method 'addRentalContract'");
     }
 
+    @Override
+    public void register(String tenantID, String firstName, String lastName, String email, String password) {
+
+        int User = 001;
+
+        String firsNam = "this.InputString()";
+
+        String lastNam = "this.InputString()";
+        String emai = "this.InputString()";
+
+        String passWor = "this.InputString()";
+        // User use = new PropertyOwner(User, firsNam, lastNam, emai, passWor);
+        // this.listUser.add(use);
+
+        setUserID(User);
+        setEmail(email);
+        setFirstName(firsNam);
+        setLastName(lastNam);
+        setPassword(passWor);
+
+    }
+
 }
