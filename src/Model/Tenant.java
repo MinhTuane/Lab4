@@ -16,6 +16,10 @@ public class Tenant extends User implements TenantService {
         this.contracts = contracts;
     }
 
+    public Tenant(int userID, String firstName, String lastName, String email, String password) {
+        super(userID, firstName, lastName, email, password);
+    }
+
     public Tenant(int userID, String firstName, String lastName, String email, String password,
             List<RentalContract> contracts) {
         super(userID, firstName, lastName, email, password);
