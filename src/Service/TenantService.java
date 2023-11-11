@@ -1,7 +1,8 @@
 package Service;
 
-public interface TenantService {
-    public void register(String tenantID, String firstName, String lastName, String email, String password);
+import Model.RentalContract;
 
-    public void updateProfile(String tenantID, String firstName, String lastName, String email, String password);
+public interface TenantService {
+    public void addRentalContract(RentalContract rentalContract);
+
 }

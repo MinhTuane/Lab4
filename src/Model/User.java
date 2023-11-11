@@ -1,7 +1,7 @@
 package Model;
 
 public abstract class User {
-    private String userID;
+    private int userID;
     private String firstName;
     private String lastName;
     private String email;
@@ -10,7 +10,7 @@ public abstract class User {
     public User() {
     }
 
-    public User(String userID, String firstName, String lastName, String email, String password) {
+    public User(int userID, String firstName, String lastName, String email, String password) {
         this.userID = userID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -18,11 +18,11 @@ public abstract class User {
         this.password = password;
     }
 
-    public String getUserID() {
+    public int getUserID() {
         return userID;
     }
 
-    public void setUserID(String userID) {
+    public void setUserID(int userID) {
         this.userID = userID;
     }
 
@@ -58,4 +58,9 @@ public abstract class User {
         this.password = password;
     }
 
+    public void register(String tenantID, String firstName, String lastName, String email, String password) {
+    };
+
+    public void updateProfile(String tenantID, String firstName, String lastName, String email, String password) {
+    };
 }

@@ -1,40 +1,39 @@
 package Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Service.TenantService;
 
 public class Tenant extends User implements TenantService {
-    private String tenantID;
+    List<RentalContract> contracts;
 
     public Tenant() {
+        this.contracts = new ArrayList<>();
     }
 
-    public Tenant(String tenantID) {
-        this.tenantID = tenantID;
+    public Tenant(List<RentalContract> contracts) {
+        this.contracts = contracts;
     }
 
-    public Tenant(String userID, String firstName, String lastName, String email, String password, String tenantID) {
+    public Tenant(int userID, String firstName, String lastName, String email, String password,
+            List<RentalContract> contracts) {
         super(userID, firstName, lastName, email, password);
-        this.tenantID = tenantID;
+        this.contracts = contracts;
     }
 
-    public String getTenantID() {
-        return tenantID;
+    public List<RentalContract> getContracts() {
+        return contracts;
     }
 
-    public void setTenantID(String tenantID) {
-        this.tenantID = tenantID;
-    }
-
-    @Override
-    public void register(String tenantID, String firstName, String lastName, String email, String password) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'register'");
+    public void setContracts(List<RentalContract> contracts) {
+        this.contracts = contracts;
     }
 
     @Override
-    public void updateProfile(String tenantID, String firstName, String lastName, String email, String password) {
+    public void addRentalContract(RentalContract rentalContract) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateProfile'");
+        throw new UnsupportedOperationException("Unimplemented method 'addRentalContract'");
     }
 
 }
