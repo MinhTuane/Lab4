@@ -58,13 +58,7 @@ public abstract class User {
         this.password = password;
     }
 
-    public void register(String tenantID, String firstName, String lastName, String email, String password) {
-    };
-
     public void login(String email, String password) {
-    };
-
-    public void updateProfile(String tenantID, String firstName, String lastName, String email, String password) {
     };
 
     public void resetPassword(String new_password) {
