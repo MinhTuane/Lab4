@@ -1,6 +1,6 @@
 package Model;
 
-public abstract class User {
+public class User {
     private int userID;
     private String firstName;
     private String lastName;
@@ -58,9 +58,19 @@ public abstract class User {
         this.password = password;
     }
 
-    public void login(String email, String password) {
-    };
+    @Override
+    public String toString() {
+        return "User [userID=" + userID + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+                + ", password=" + password + "]";
+    }
 
-    public void resetPassword(String new_password) {
-    };
+    public boolean login(String email, String password) {
+        return this.email.equals(email) && this.password.equals(password);
+    }
+
+    public boolean resetPassword(String newPassword) {
+        this.password = newPassword;
+        return true;
+    }
+
 }

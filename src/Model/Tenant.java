@@ -3,9 +3,7 @@ package Model;
 import java.util.ArrayList;
 import java.util.List;
 
-import Service.TenantService;
-
-public class Tenant extends User implements TenantService {
+public class Tenant extends User {
     private List<Integer> contractIDs = new ArrayList<>();
 
     public Tenant() {
@@ -15,8 +13,10 @@ public class Tenant extends User implements TenantService {
         this.contractIDs = contractIDs;
     }
 
-    public Tenant(int userID, String firstName, String lastName, String email, String password) {
+    public Tenant(int userID, String firstName, String lastName, String email, String password,
+            List<Integer> contractIDs) {
         super(userID, firstName, lastName, email, password);
+        this.contractIDs = contractIDs;
     }
 
     public List<Integer> getContractIDs() {
@@ -28,23 +28,20 @@ public class Tenant extends User implements TenantService {
     }
 
     @Override
-    public void addContract(int contractID) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addContract'");
+    public String toString() {
+        return "Tenant  [userID=" + this.getUserID() + ", firstName=" + this.getFirstName() +
+                ", lastName=" + this.getLastName() + ", email=" + this.getEmail()
+                + ", password=" + this.getPassword() + "]+contractIDs=" + contractIDs + "]";
     }
 
-    @Override
-    public void register(String tenantID, String firstName, String lastName, String email, String password,
+    public void updateProfile(int tenantID, String firstName, String lastName, String email, String password,
             List<Integer> contractIDs) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'register'");
-    }
-
-    @Override
-    public void updateProfile(String tenantID, String firstName, String lastName, String email, String password,
-            List<Integer> contractIDs) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateProfile'");
+        this.setUserID(tenantID);
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setEmail(email);
+        this.setPassword(password);
+        this.setContractIDs(contractIDs);
     }
 
 }
