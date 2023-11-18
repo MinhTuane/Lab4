@@ -38,7 +38,7 @@ public class Manager extends User {
 
     @Override
     public void deleteContract(int contractID) {
-        this.contractIDs.remove(contractID);
+        this.contractIDs.remove((Integer)contractID);
     }
 
     @Override

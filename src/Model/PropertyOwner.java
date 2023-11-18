@@ -37,13 +37,13 @@ public class PropertyOwner extends User {
     }
 
     @Override
-    public void updateProperty(int propertyID) {
-        this.propertyIDs.add(propertyID);
+    public void updateProperty(List<Integer> properties) {
+        this.propertyIDs = properties;
     }
 
     @Override
     public void deleteProperty(int propertyID) {
-        propertyIDs.remove(propertyID);
+        propertyIDs.remove((Integer) propertyID);
     }
 
 }

@@ -1,5 +1,7 @@
 package App;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 import BaseFactory.BaseContractFactory;
@@ -33,14 +35,23 @@ public class Main {
 		Property property = propertyFactory.createProperty(444, "ok", 10000, owner.getUserID(), -1);
 		RentalContract contract = contractFactory.createContract(555, tenant.getUserID(), property.getPropertyID(), now,
 				now);
-
 		property.setContractIds(contract.getContractID());
 
-		System.out.println(tenant);
-		System.out.println(owner);
-		System.out.println(manager);
-		System.out.println(property);
-		System.out.println(contract);
+		owner.updateProperty(new ArrayList<>(Arrays.asList(property.getPropertyID())));
+		System.out.println(owner.readProperty());
+		owner.deleteProperty(property.getPropertyID());
+		System.out.println(owner.readProperty());
+
+		manager.updateContract(new ArrayList<>(Arrays.asList(contract.getContractID())));
+		System.out.println(manager.readContract());
+		manager.deleteContract(contract.getContractID());
+		System.out.println(manager.readContract());
+
+		// System.out.println(tenant);
+		// System.out.println(owner);
+		// System.out.println(manager);
+		// System.out.println(property);
+		// System.out.println(contract);
 	}
 
 }

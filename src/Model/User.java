@@ -109,7 +109,7 @@ public abstract class User {
         return null;
     }
 
-    public void updateProperty(int propertyID) {
+    public void updateProperty(List<Integer> properties) {
         System.out.println("You don't have permission");
     }
 
