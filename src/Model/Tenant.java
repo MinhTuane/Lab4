@@ -18,8 +18,9 @@ public class Tenant extends User {
         return super.toString() + "Tenant [contractIDs=" + contractIDs + "]";
     }
 
-    public void viewContracts() {
-        System.out.println(this.contractIDs);
+    @Override
+    public List<Integer> readContract() {
+        return this.contractIDs;
     }
 
 }

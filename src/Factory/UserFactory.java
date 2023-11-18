@@ -1,7 +1,5 @@
 package Factory;
 
-import java.util.List;
-
 import BaseFactory.BaseUserFactory;
 import Model.Manager;
 import Model.PropertyOwner;
@@ -11,19 +9,20 @@ import Model.User;
 public class UserFactory implements BaseUserFactory {
 
     @Override
-    public User createUser(String userType, List<Integer> ids) {
+    public User createUser(String userType, int userID, String firstName, String lastName, String email,
+            String password) {
         User user = null;
 
         switch (userType.toLowerCase()) {
             case "tenant":
-                user = new Tenant(0, userType, userType, userType, userType);
+                user = new Tenant(userID, firstName, lastName, email, password);
                 break;
 
             case "propertyowner":
-                user = new PropertyOwner(0, userType, userType, userType, userType);
+                user = new PropertyOwner(userID, firstName, lastName, email, password);
                 break;
             case "manager":
-                user = new Manager(0, userType, userType, userType, userType);
+                user = new Manager(userID, firstName, lastName, email, password);
                 break;
             default:
                 break;

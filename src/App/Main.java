@@ -2,6 +2,7 @@ package App;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 import BaseFactory.BaseContractFactory;
 import BaseFactory.BasePropertyFactory;
@@ -9,9 +10,11 @@ import BaseFactory.BaseUserFactory;
 import Factory.ContractFactory;
 import Factory.PropertyFactory;
 import Factory.UserFactory;
+import Model.Manager;
 import Model.Property;
+import Model.PropertyOwner;
 import Model.RentalContract;
-import Model.User;
+import Model.Tenant;
 
 public class Main {
 
@@ -21,15 +24,27 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		User tenant = userFactory.createUser("tenant", new ArrayList<>(Arrays.asList(1, 3, 5, 4, 6, 7)));
-		User owner = userFactory.createUser("propertyOwner", new ArrayList<>(Arrays.asList(1, 3, 5, 4)));
-		Property property = propertyFactory.createProperty(0, null, null, null, null);
-		RentalContract rentalContract = contractFactory.createContract(0, 0, 0, null, null);
+		Date now = new Date();
+
+		Tenant tenant = (Tenant) userFactory.createUser("tenant", 111, "tenant", "tenant", "tenant@gmail.com",
+				"tenant1234");
+		PropertyOwner owner = (PropertyOwner) userFactory.createUser("PropertyOwner", 222, "owner", "owner",
+				"owner@gmail.com",
+				"owner1234");
+		Manager manager = (Manager) userFactory.createUser("manager", 333, "manager", "manager", "manager@gmail.com",
+				"manager1234");
+
+		Property property = propertyFactory.createProperty(444, "ok", 10000, owner.getUserID(), -1);
+		RentalContract contract = contractFactory.createContract(555, tenant.getUserID(), property.getPropertyID(), now,
+				now);
+
+		property.setContractIds(contract.getContractID());
 
 		System.out.println(tenant);
 		System.out.println(owner);
+		System.out.println(manager);
 		System.out.println(property);
-		System.out.println(rentalContract);
+		System.out.println(contract);
 	}
 
 }

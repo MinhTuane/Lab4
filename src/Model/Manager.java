@@ -40,4 +40,10 @@ public class Manager extends User {
     public void deleteContract(int contractID) {
         this.contractIDs.remove(contractID);
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Manager [contractIDs=" + contractIDs + "]";
+    }
+
 }

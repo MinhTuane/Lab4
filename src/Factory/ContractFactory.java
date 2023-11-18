@@ -9,7 +9,7 @@ public class ContractFactory implements BaseContractFactory {
 
     @Override
     public RentalContract createContract(int contractID, int tenantID, int propertyID, Date starDate, Date endDate) {
-        return new RentalContract(0, tenantID, propertyID, starDate, endDate);
+        return new RentalContract(contractID, tenantID, propertyID, starDate, endDate);
     }
 
 }

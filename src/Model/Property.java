@@ -1,24 +1,22 @@
 package Model;
 
-import java.util.List;
-
 public class Property {
     private int propertyID;
     private String description;
-    private String rentalRate;
-    private List<Integer> ownerIds;
-    private List<Integer> contractIds;
+    private double rentalRate;
+    private int contractId;
+    private int ownerId;
 
     public Property() {
     }
 
-    public Property(int propertyID, String description, String rentalRate, List<Integer> ownerIds,
-            List<Integer> contractIds) {
+    public Property(int propertyID, String description, double rentalRate, int ownerIds,
+            int contractIds) {
         this.propertyID = propertyID;
         this.description = description;
         this.rentalRate = rentalRate;
-        this.ownerIds = ownerIds;
-        this.contractIds = contractIds;
+        this.ownerId = ownerIds;
+        this.contractId = contractIds;
     }
 
     public int getPropertyID() {
@@ -37,34 +35,34 @@ public class Property {
         this.description = description;
     }
 
-    public String getRentalRate() {
+    public double getRentalRate() {
         return rentalRate;
     }
 
-    public void setRentalRate(String rentalRate) {
+    public void setRentalRate(double rentalRate) {
         this.rentalRate = rentalRate;
     }
 
-    public List<Integer> getOwnerIds() {
-        return ownerIds;
+    public int getOwnerId() {
+        return ownerId;
     }
 
-    public void setOwnerIds(List<Integer> ownerIds) {
-        this.ownerIds = ownerIds;
+    public void setOwnerId(int ownerIds) {
+        this.ownerId = ownerIds;
     }
 
-    public List<Integer> getContractIds() {
-        return contractIds;
+    public int getContractId() {
+        return contractId;
     }
 
-    public void setContractIds(List<Integer> contractIds) {
-        this.contractIds = contractIds;
+    public void setContractIds(int contractIds) {
+        this.contractId = contractIds;
     }
 
     @Override
     public String toString() {
         return "Property [propertyID=" + propertyID + ", description=" + description + ", rentalRate=" + rentalRate
-                + ", ownerIds=" + ownerIds + ", contractIds=" + contractIds + "]";
+                + ", ownerIds=" + ownerId + ", contractIds=" + contractId + "]";
     }
 
 }
