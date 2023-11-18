@@ -34,14 +34,15 @@ public class Tenant extends User {
                 + ", password=" + this.getPassword() + "]+contractIDs=" + contractIDs + "]";
     }
 
-    public void updateProfile(int tenantID, String firstName, String lastName, String email, String password,
-            List<Integer> contractIDs) {
-        this.setUserID(tenantID);
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-        this.setEmail(email);
-        this.setPassword(password);
-        this.setContractIDs(contractIDs);
+    @Override
+    public void updateProfile() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'updateProfile'");
     }
 
+    @Override
+    public void addContract(int contractID) {
+        this.contractIDs.add(contractID);
+        System.out.println("ok");
+    }
 }

@@ -1,6 +1,6 @@
 package Model;
 
-public class User {
+public abstract class User {
     private int userID;
     private String firstName;
     private String lastName;
@@ -72,5 +72,9 @@ public class User {
         this.password = newPassword;
         return true;
     }
+
+    public abstract void addContract(int contractID);
+
+    public abstract void updateProfile();
 
 }
