@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.List;
+
 public abstract class User {
     private int userID;
     private String firstName;
@@ -73,8 +75,16 @@ public abstract class User {
         return true;
     }
 
+    public void updateProfile(int userID, String firstName, String lastName, String email, String password) {
+        setUserID(userID);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
+        setPassword(password);
+    };
+
     public abstract void addContract(int contractID);
 
-    public abstract void updateProfile();
+    public abstract void updateContract(List<Integer> contracts);
 
 }

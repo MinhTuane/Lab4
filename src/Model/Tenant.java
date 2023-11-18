@@ -35,14 +35,13 @@ public class Tenant extends User {
     }
 
     @Override
-    public void updateProfile() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateProfile'");
-    }
-
-    @Override
     public void addContract(int contractID) {
         this.contractIDs.add(contractID);
         System.out.println("ok");
+    }
+
+    @Override
+    public void updateContract(List<Integer> contracts) {
+        this.contractIDs = contracts;
     }
 }
