@@ -1,7 +1,5 @@
 package App;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 
 import BaseFactory.BaseContractFactory;
@@ -29,11 +27,9 @@ public class Main {
 		Tenant tenant = (Tenant) userFactory.createUser("tenant", 111, "tenant", "tenant", "tenant@gmail.com",
 				"tenant1234");
 		PropertyOwner owner = (PropertyOwner) userFactory.createUser("PropertyOwner", 222, "owner", "owner",
-				"owner@gmail.com",
-				"owner1234");
+				"owner@gmail.com", "owner1234");
 		Manager manager = (Manager) userFactory.createUser("manager", 333, "manager", "manager", "manager@gmail.com",
 				"manager1234");
-
 		Property property = propertyFactory.createProperty(444, "ok", 10000, owner.getUserID(), -1);
 		RentalContract contract = contractFactory.createContract(555, tenant.getUserID(), property.getPropertyID(), now,
 				now);
