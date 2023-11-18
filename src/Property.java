@@ -13,7 +13,14 @@ public class Property {
 		this.propertyOwnerID=proper;
 		this.rentalRate=rent;
 	}
-
+	public Property createProperty(String id,String desc,String contr,String propertyOwner, double rent) {
+		return new Property(id,desc,contr,propertyOwner,rent);
+	}
+	public String readProperty(Property ppt) {
+		
+		return ppt.getContractID()+" "+ppt.getDescribe()+" "+ppt.getContractID()
+		+" "+ppt.getPropertyOwnerID()+" "+Double.toString(ppt.getRentalRate()).toString();
+	}
 	public String getId() {
 		return id;
 	}
