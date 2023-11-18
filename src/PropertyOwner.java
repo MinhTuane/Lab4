@@ -8,15 +8,55 @@ public class PropertyOwner extends User{
 	User user;
 	String OwnerID;
 	Property ppt;
-	public List<Property> listProperty= new ArrayList<>();
+	List<Property> listProperty= new ArrayList<>();
 	
-	
+	public void select() {
+		
+		int n= 0;
+		while(n!=5) {
+			this.sysout("Select your option :\n1.Create Property\n2.Read Property\n3.Update Property\n4.Delete Property\n5.Exit");
+			n= sc.nextInt();
+			switch (n){
+			case 1:
+				sysout("Property Id :");
+				String id = this.InputString();
+				sysout("Describe :");
+				String des= this.InputString();
+				sysout("Contract ID: ");
+				String contr= this.InputString();
+				sysout("Property Owner ID: ");
+				String propertyOnwer = this.InputString();
+				sysout("Rental Rate :");
+				double rental= sc.nextDouble();
+				this.createProperty(id, des, contr, propertyOnwer, rental);
+				break;
+			case 2:
+				sysout("ID :");
+				String idr= this.InputString();
+				this.readProperty(idr);
+				break;
+				
+			case 3:
+				sysout("ID :");
+				String idu= this.InputString();
+				this.updateProperty(idu);
+				break;
+			case 4:
+				sysout("ID :");
+				String idd= this.InputString();
+				this.deleteProperty(idd);
+				break;
+			}
+		}
+	}
 	public void createProperty(String id,String desc,String contr,String propertyOwner,double rent) {
-		this.addListProperty(ppt.createProperty(id, desc, contr,propertyOwner, rent));
+		Property p=new Property(id,desc,contr,propertyOwner, rent);
+		this.addListProperty(p);
+		
 	}
 	public void readProperty(String id) {
 		Property p=this.findProperty(id);
-		p.readProperty();
+		sysout(p.readProperty());
 	}
 	public void deleteProperty(String id) {
 		Property p=this.findProperty(id);
@@ -29,16 +69,17 @@ public class PropertyOwner extends User{
 		p.setDescribe(sc.next());
 		p.setContractID(sc.next());
 		p.setPropertyOwnerID(sc.next());
-		p.setPropertyOwnerID(sc.next());
 		p.setRentalRate(sc.nextDouble());
 		
 	}
 	public void addListProperty(Property property) {
-		this.listProperty.add(property);
+		
+		 this.listProperty.add(property);
 	}
 	public Property findProperty(String id) {
 		for(Property a:listProperty) {
-			if(a.getId()==id) {
+			if(a.getId().equals(id)) {
+				
 				return a;
 			}
 		}

@@ -13,13 +13,10 @@ public class Property {
 		this.propertyOwnerID=proper;
 		this.rentalRate=rent;
 	}
-	public Property createProperty(String id,String desc,String contr,String propertyOwner, double rent) {
-		return new Property(id,desc,contr,propertyOwner,rent);
-	}
 	public String readProperty() {
 		
-		return this.getContractID()+" "+this.getDescribe()+" "+this.getContractID()
-		+" "+this.getPropertyOwnerID()+" "+Double.toString(this.getRentalRate()).toString();
+		return "ID :"+this.getId()+" Describe: "+this.getDescribe()+" Contract ID: "+this.getContractID()
+		+" Property Owner :"+this.getPropertyOwnerID()+" Rental Rate: "+Double.toString(this.getRentalRate()).toString();
 	}
 	public String getId() {
 		return id;
