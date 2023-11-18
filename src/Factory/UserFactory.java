@@ -1,6 +1,5 @@
 package Factory;
 
-import java.util.Arrays;
 import java.util.List;
 
 import BaseFactory.BaseUserFactory;
