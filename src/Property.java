@@ -16,10 +16,10 @@ public class Property {
 	public Property createProperty(String id,String desc,String contr,String propertyOwner, double rent) {
 		return new Property(id,desc,contr,propertyOwner,rent);
 	}
-	public String readProperty(Property ppt) {
+	public String readProperty() {
 		
-		return ppt.getContractID()+" "+ppt.getDescribe()+" "+ppt.getContractID()
-		+" "+ppt.getPropertyOwnerID()+" "+Double.toString(ppt.getRentalRate()).toString();
+		return this.getContractID()+" "+this.getDescribe()+" "+this.getContractID()
+		+" "+this.getPropertyOwnerID()+" "+Double.toString(this.getRentalRate()).toString();
 	}
 	public String getId() {
 		return id;

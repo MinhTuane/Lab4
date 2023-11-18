@@ -16,7 +16,7 @@ public class PropertyOwner extends User{
 	}
 	public void readProperty(String id) {
 		Property p=this.findProperty(id);
-		ppt.readProperty(p);
+		p.readProperty();
 	}
 	public void deleteProperty(String id) {
 		Property p=this.findProperty(id);
