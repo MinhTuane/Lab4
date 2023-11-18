@@ -12,14 +12,8 @@ public abstract class User {
 	public Scanner sc= new Scanner(System.in);
 	List<User> listUser= new ArrayList<>();
 	
-	public User(String UserID,String firsName,String lastName,String email, String passWord){
-		this.UserID=UserID;
-		this.firstName=firsName;
-		this.lastName= lastName;
-		this.Email= email;
-		this.password=passWord;
-		
-	}
+	public abstract void addAttribute();
+	
 	public void register() {
 		
 		
