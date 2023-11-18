@@ -83,8 +83,38 @@ public abstract class User {
         setPassword(password);
     };
 
-    public abstract void addId(int id);
+    public void createContract() {
+        System.out.println("You don't have permission");
+    }
 
-    public abstract void updateIds(List<Integer> ids);
+    public List<Integer> readContract() {
+        System.out.println("You don't have permission");
+        return null;
+    }
+
+    public void updateContract(List<Integer> contracts) {
+        System.out.println("You don't have permission");
+    }
+
+    public void deleteContract(int contractID) {
+        System.out.println("You don't have permission");
+    }
+
+    public void createProperty() {
+        System.out.println("You don't have permission");
+    }
+
+    public List<Integer> readProperty() {
+        System.out.println("You don't have permission");
+        return null;
+    }
+
+    public void updateProperty(int propertyID) {
+        System.out.println("You don't have permission");
+    }
+
+    public void deleteProperty(int propertyID) {
+        System.out.println("You don't have permission");
+    }
 
 }

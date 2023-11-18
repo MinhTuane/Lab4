@@ -13,27 +13,13 @@ public class Tenant extends User {
         super(userID, firstName, lastName, email, password);
     }
 
-    public List<Integer> getContractIDs() {
-        return contractIDs;
-    }
-
-    public void setContractIDs(List<Integer> contractIDs) {
-        this.contractIDs = contractIDs;
-    }
-
     @Override
     public String toString() {
         return super.toString() + "Tenant [contractIDs=" + contractIDs + "]";
     }
 
-    @Override
-    public void addId(int contractID) {
-        this.contractIDs.add(contractID);
-        System.out.println("addContract: ok");
+    public void viewContracts() {
+        System.out.println(this.contractIDs);
     }
 
-    @Override
-    public void updateIds(List<Integer> contracts) {
-        this.contractIDs = contracts;
-    }
 }

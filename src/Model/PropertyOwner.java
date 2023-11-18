@@ -22,19 +22,28 @@ public class PropertyOwner extends User {
     }
 
     @Override
-    public void addId(int id) {
-        this.propertyIDs.add(id);
-        System.out.println("addProperty: ok");
-    }
-
-    @Override
-    public void updateIds(List<Integer> ids) {
-        this.propertyIDs = ids;
-    }
-
-    @Override
     public String toString() {
         return super.toString() + "PropertyOwner [propertyIDs=" + propertyIDs + "]";
+    }
+
+    @Override
+    public void createProperty() {
+        this.propertyIDs = new ArrayList<>();
+    }
+
+    @Override
+    public List<Integer> readProperty() {
+        return this.propertyIDs;
+    }
+
+    @Override
+    public void updateProperty(int propertyID) {
+        this.propertyIDs.add(propertyID);
+    }
+
+    @Override
+    public void deleteProperty(int propertyID) {
+        propertyIDs.remove(propertyID);
     }
 
 }
