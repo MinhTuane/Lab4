@@ -83,8 +83,8 @@ public abstract class User {
         setPassword(password);
     };
 
-    public abstract void addContract(int contractID);
+    public abstract void addId(int id);
 
-    public abstract void updateContract(List<Integer> contracts);
+    public abstract void updateIds(List<Integer> ids);
 
 }

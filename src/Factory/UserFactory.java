@@ -4,20 +4,27 @@ import java.util.Arrays;
 import java.util.List;
 
 import BaseFactory.BaseUserFactory;
+import Model.PropertyOwner;
 import Model.Tenant;
 import Model.User;
 
 public class UserFactory implements BaseUserFactory {
 
     @Override
-    public User createUser(String userType,List<Integer>ids) {
+    public User createUser(String userType, List<Integer> ids) {
         User user = null;
 
         switch (userType.toLowerCase()) {
             case "tenant":
-                user = new Tenant();
-                user.updateContract(ids);
-                user.addContract(1);
+                user = new Tenant(0, userType, userType, userType, userType);
+                user.updateIds(ids);
+                user.addId(1);
+                break;
+
+            case "propertyowner":
+                user = new PropertyOwner(0, userType, userType, userType, userType);
+                user.updateIds(ids);
+                user.addId(1);
                 break;
 
             default:

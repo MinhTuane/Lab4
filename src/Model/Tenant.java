@@ -9,14 +9,8 @@ public class Tenant extends User {
     public Tenant() {
     }
 
-    public Tenant(List<Integer> contractIDs) {
-        this.contractIDs = contractIDs;
-    }
-
-    public Tenant(int userID, String firstName, String lastName, String email, String password,
-            List<Integer> contractIDs) {
+    public Tenant(int userID, String firstName, String lastName, String email, String password) {
         super(userID, firstName, lastName, email, password);
-        this.contractIDs = contractIDs;
     }
 
     public List<Integer> getContractIDs() {
@@ -29,19 +23,17 @@ public class Tenant extends User {
 
     @Override
     public String toString() {
-        return "Tenant  [userID=" + this.getUserID() + ", firstName=" + this.getFirstName() +
-                ", lastName=" + this.getLastName() + ", email=" + this.getEmail()
-                + ", password=" + this.getPassword() + "]+contractIDs=" + contractIDs + "]";
+        return super.toString() + "Tenant [contractIDs=" + contractIDs + "]";
     }
 
     @Override
-    public void addContract(int contractID) {
+    public void addId(int contractID) {
         this.contractIDs.add(contractID);
-        System.out.println("ok");
+        System.out.println("addContract: ok");
     }
 
     @Override
-    public void updateContract(List<Integer> contracts) {
+    public void updateIds(List<Integer> contracts) {
         this.contractIDs = contracts;
     }
 }
